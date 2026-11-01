@@ -5,6 +5,7 @@ import DaftarPost from './DaftarPost';
 import DaftarBuah from './DaftarBuah';
 import DaftarUser from './DaftarUser';
 import Nama from './Nama';
+import './App.css';
 import {useState} from 'react';
 
 function App(){
@@ -35,16 +36,19 @@ function App(){
   }
   return (
     <div>
-      {p}<br/>
-      <button onClick={()=> setTampilan('Counter')}>Counter</button>
-      <button onClick={()=> setTampilan('KetikNama')}>KetikNama</button>
-      <button onClick={()=> setTampilan('Lampu')}>Lampu</button>
-      <button onClick={()=> setTampilan('Nama')}>Nama</button>
-      <button onClick={()=> setTampilan('DaftarPost')}>DaftarPost</button>
-      <button onClick={()=> setTampilan('DaftarBuah')}>DaftarBuah</button>
-      <button onClick={()=> setTampilan('DaftarUser')}>DaftarUser</button>
+            {p}<br/>
+      <div className="menu">
+        <button className={tampilan === "Counter" ? "tombol aktif" : "tombol"} onClick={()=> setTampilan('Counter')}>Counter</button>
+        <button className={tampilan === "KetikNama" ? "tombol aktif" : "tombol"} onClick={()=> setTampilan('KetikNama')}>KetikNama</button>
+        <button className={tampilan === "Lampu" ? "tombol aktif" : "tombol"} onClick={()=> setTampilan('Lampu')}>Lampu</button>
+        <button className={tampilan === "Nama" ? "tombol aktif" : "tombol"} onClick={()=> setTampilan('Nama')}>Nama</button>
+        <button className={tampilan === "DaftarPost" ? "tombol aktif" : "tombol"} onClick={()=> setTampilan('DaftarPost')}>DaftarPost</button>
+        <button className={tampilan === "DaftarBuah" ? "tombol aktif" : "tombol"} onClick={()=> setTampilan('DaftarBuah')}>DaftarBuah</button>
+        <button className={tampilan === "DaftarUser" ? "tombol aktif" : "tombol"} onClick={()=> setTampilan('DaftarUser')}>DaftarUser</button>
+      </div>
       {content}
     </div>
+    
   );
 }
 
